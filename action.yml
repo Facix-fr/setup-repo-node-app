@@ -31,4 +31,6 @@ runs:
       run: echo "📦 Install dependencies"
     - shell: bash
       name: Install dependencies
-      run: yarn
+      run: |
+        cd ${{inputs.working-directory}}
+        yarn install --immutable --immutable-cache --mode=skip-build
