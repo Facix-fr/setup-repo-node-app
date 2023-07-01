@@ -19,7 +19,7 @@ runs:
   steps:
     - shell: bash
       run: echo "🤙 Sparse checkout ${{inputs.working-directory}}"
-    - uses: Facix-fr/sparse-checkout@v1.0
+    - uses: Facix-fr/sparse-checkout@v1.1
       with:
         patterns: ${{inputs.working-directory}} ${{inputs.other-patterns-to-sparse-checkout}}
     - shell: bash
@@ -33,4 +33,4 @@ runs:
       name: Install dependencies
       run: |
         cd ${{inputs.working-directory}}
-        yarn install --immutable --immutable-cache --mode=skip-build
+        yarn install --immutable --mode=skip-build
